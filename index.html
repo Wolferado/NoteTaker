@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>NoteTaker - Take a Note</title>
+</head>
+<body>
+    <h1 id="title">NoteTaker</h1>
+    <h2 id="title-description">A place where you take your notes.</h2>
+    <section id="input-part">
+        <form id="input-form">
+            <div id="grid-embed">
+                <button id="embed-button" type="button">+</button> <br>
+            </div>
+            <div id="grid-input">
+                <h3>Title</h3>
+                <input id="input-title" type="text" autocomplete="off" maxlength="70" placeholder="Enter title of the Note in here..."><span id="titleWordCounter">0/70</span><br>
+                <h3>Text</h3>
+                <textarea id="input-text" type="text" autocomplete="off" maxlength="300" placeholder="Enter your note in here..."></textarea><span id="textWordCounter">0/300</span> <br>
+                <br>
+                <button id="submit-button" type="button">Take a Note</button>
+            </div>
+        </form>
+    </section>
+    <section id="output-part">
+        <div id="note-container">
+            <!--<div class="note">
+                <button id="delete-button" type="button">x</button> <br>
+                <h2>Title Title Title Title Title</h2>
+                <div>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </div>
+            </div>-->
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
