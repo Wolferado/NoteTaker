@@ -15,6 +15,10 @@ function changeWordCounter() {
         textInputWordCounter.textContent = textLetterCount + "/300";
     });
 
+    let embedButton = document.getElementById("embed-button");
+    embedButton.setAttribute("type", "file");
+    embedButton.setAttribute("name", "filename");
+
     let submitButton = document.getElementById("submit-button");
     submitButton.addEventListener('click', function() {
         createNote();
