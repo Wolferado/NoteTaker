@@ -222,10 +222,6 @@ body {
     margin-bottom: 15px;
 }
 
-.note .cancel-button {
-    display: flex;
-}
-
 .note .save-button {
     display: flex;
     position: relative;
@@ -286,5 +282,13 @@ body {
         margin-left: 5%;
         margin-right: 10%;
         margin-top: -15px;
+    }
+    
+    .note .note-button-container {
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        margin-bottom: 15px;
+        order: 2;
     }
 }
