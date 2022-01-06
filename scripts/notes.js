@@ -1,10 +1,15 @@
 const container = document.getElementById("note-container");
+var reader = new FileReader();
 
+/**
+ * Function to create a note.
+ */
 function createNote() {
     let titleInput = document.getElementById("input-title");
     let textInput = document.getElementById("input-text");
+    let embedInput = document.getElementById("embed-button");
+    let warning = document.getElementById("input-warning");
     
-    // TO DO: Create a text that notify to fill all fields (as well as to edit)
     if(titleInput.value.trim() && textInput.value.trim()) {
         let title = titleInput.value;
         let text = textInput.value;
@@ -29,16 +34,23 @@ function createNote() {
         editButton.setAttribute("class", "edit-button");
         editButton.textContent = "Edit Note";
 
-        // TODO: Simply fix the opacity
         deleteButton.onclick = function () {
             var el = buttonContainer.parentElement;
-            var opacity = parseFloat(el.style.opacity);
-            for(var i = 1; i < 99; i++) {
+            el.scrollIntoView({
+                behavior: "smooth"
+            });
+            let opacity = 1;
+            var interval = setInterval(noteDelete, 5);
+            function noteDelete() {
+                if (opacity <= 0){
+                    clearInterval(interval);
+                    el.remove();
+                    scroll(el)
+                    return;
+                }
                 opacity -= 0.01;
-                el.setAttribute('style', 'opacity: ' + opacity);
+                el.style.opacity = opacity;
             }
-
-            el.remove();
         };
 
         editButton.onclick = function() {
@@ -113,10 +125,45 @@ function createNote() {
         var textNode = document.createElement("div");
         textNode.textContent = text;
         note.appendChild(textNode);
-    
+
+        if (embedInput.files[0] != null) {
+            reader.readAsDataURL(embedInput.files[0]);
+            
+            var imageNode = document.createElement("img");
+            reader.onloadend = function() {
+                imageNode.src = reader.result;    
+            }
+            note.appendChild(imageNode);
+        }
+
         container.append(note);
 
         titleInput.value = "";
         textInput.value = "";
+        embedInput.value = "";
+        warning.style.opacity = 0;
+        titleInput.select();
+    }
+    else {
+        warning.style.opacity = 0;
+        let opacity = 0;
+        var interval = setInterval(warningMessageAppear, 5);
+        function warningMessageAppear() {
+            if (opacity >= 1){
+                clearInterval(interval);
+                return;
+            }
+            opacity += 0.01;
+            warning.style.opacity = opacity;
+        }
+        if(textInput.value.trim()) {
+            warning.textContent = "Please, fill out the Title field.";
+        }
+        else if(titleInput.value.trim()) {
+            warning.textContent = "Please, fill out the Text field."
+        }
+        else {
+            warning.textContent = "Please, fill out both fields."
+        }
     }
 }

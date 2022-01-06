@@ -32,7 +32,7 @@ body {
 
 #input-form {
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 15% 85%;
     margin-top: 50px;
     margin-left: 10%;
     margin-right: 10%;
@@ -66,12 +66,25 @@ body {
 }
 
 #embed-button {
-    width: clamp(35px, 50px, 100px);
+    width: clamp(50px, 75px, 125px);
     height: clamp(35px, 50px, 100px);
-    transform: rotate(90deg);
+    display: none;
+}
+
+#embed-label {
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
 }
 
 #embed-button:hover {
+    cursor: pointer;
+}
+
+#delete-embed {
+    position: absolute;
+    display: none;
+    align-self: flex-end;
     cursor: pointer;
 }
 
@@ -118,16 +131,20 @@ body {
     color: #ffffff90
 }
 
+#grid-input #input-warning {
+    color: #dd4444;
+    font-size: 20px;
+    position: relative;
+    margin: -10px -10px -10px -10px;
+    opacity: 0;
+}
+
 #note-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
-}
-
-.note > h2 {
-    word-break: break-word;
 }
 
 .note {
@@ -142,6 +159,8 @@ body {
 }
 
 .note > h2 {
+    word-break: break-word;
+    padding-top: 15px;
     font-size: 30px;
     margin-top: -30px;
 }
@@ -149,6 +168,15 @@ body {
 .note > div {
     font-size: 25px;
     word-break: break-all;
+}
+
+.note > img {
+    position: relative;
+    align-self: center;
+    border: 2px solid #000000;
+    margin: 10px 10px 10px 10px;
+    width: 50%;
+    height: 50%;
 }
 
 .note .note-button-container {
@@ -222,10 +250,6 @@ body {
     margin-bottom: 15px;
 }
 
-.note .cancel-button {
-    display: flex;
-}
-
 .note .save-button {
     display: flex;
     position: relative;
@@ -286,5 +310,43 @@ body {
         margin-left: 5%;
         margin-right: 10%;
         margin-top: -15px;
+    }
+
+    #grid-input #input-warning {
+        color: #dd4444;
+        font-size: 20px;
+        position: relative;
+        margin: -10px -10px 0px 0px;
+        padding-bottom: 35px;
+        opacity: 0;
+    }
+
+    #embed-label {
+        transform: rotate(-90deg);
+    }
+
+    .note .note-button-container {
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        margin-bottom: 25px;
+        order: 2;
+    }
+
+    .note h2 {
+        margin-top: -10px;
+    }
+
+    .note .change-button-container {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .note .change-button-container button {
+        width: auto;
+        margin-bottom: 10px;
+        height: 35px;
     }
 }

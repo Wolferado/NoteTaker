@@ -1,3 +1,5 @@
+let embedInputDelete = document.getElementById("delete-embed");
+
 /**
  * Function to modify, count and display letter count near input field.
  */
@@ -18,15 +20,16 @@ function changeLetterCounter() {
         textInputWordCounter.textContent = textLetterCount + "/300";
     });
 
-    let embedButton = document.getElementById("embed-button");
-    embedButton.setAttribute("type", "file");
-    embedButton.setAttribute("name", "filename");
+    let embedInput = document.getElementById("embed-button");
+    embedInput.setAttribute("type", "file");
+    embedInput.setAttribute("name", "filename");
 
     let submitButton = document.getElementById("submit-button");
     submitButton.addEventListener('click', function() {
         createNote();
         titleInputWordCounter.textContent = "0/70"
         textInputWordCounter.textContent = "0/300";
+        embedInputDelete.click();
     })
 }
 
@@ -37,10 +40,34 @@ function changeInputBehaviour () {
     let inputForm = document.getElementById("input-form");
     let textInput = document.getElementById("input-text");
     let submitButton = document.getElementById("submit-button");
+    let embedInput = document.getElementById("embed-button");
+    let embedInputLabel = document.getElementById("embed-label");
+
+    embedInput.addEventListener('change', function() {
+        if(embedInput.value != null) {
+            embedInputLabel.textContent = "File Selected";
+            embedInputLabel.style.cursor = "default";
+            embedInput.disabled = true;
+            embedInputDelete.style.display = "flex";
+        }
+        else {
+            embedInputLabel.textContent = "Choose a File...";
+            embedInputLabel.style.cursor = "pointer";
+            embedInput.disabled = false;
+            embedInputDelete.style.display = "none";
+        }
+    });
+
+    embedInputDelete.onclick = function() {
+        embedInput.value = "";
+        embedInputLabel.textContent = "Choose a File...";
+        embedInputLabel.style.cursor = "pointer";
+        embedInput.disabled = false;
+        embedInputDelete.style.display = "none";
+    }
+
     inputForm.addEventListener('submit', e => {
         e.preventDefault();
-        submitButton.click();
-        
     });
 
     textInput.addEventListener('keydown', function(event) {
@@ -48,7 +75,7 @@ function changeInputBehaviour () {
             event.preventDefault();
             submitButton.click();
             textInput.value.trim();
-            textInput.value = "";
+            textInput.value.trim();
         }
     });
 }
