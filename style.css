@@ -325,14 +325,6 @@ body {
         transform: rotate(-90deg);
     }
 
-    .note .note-button-container {
-        display: flex;
-        align-self: center;
-        flex-direction: row;
-        margin-bottom: 25px;
-        order: 2;
-    }
-
     .note h2 {
         margin-top: -10px;
     }
@@ -348,5 +340,13 @@ body {
         width: auto;
         margin-bottom: 10px;
         height: 35px;
+    }
+
+    .note .note-button-container {
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        margin-bottom: 15px;
+        order: 2;
     }
 }
