@@ -1,11 +1,12 @@
 let embedInputDelete = document.getElementById("delete-embed");
 
 /**
- * Function to modify, count and display letter count near input field.
+ * Function to activate letter counters for the inputs..
  */
-function changeLetterCounter() {
+function activateLetterCounter() {
     let titleInputWordCounter = document.getElementById("titleWordCounter");
     let titleInput = document.getElementById("input-title");
+
     titleInput.addEventListener('keyup', function() {
         let titleWords = titleInput.value;
         let titleLetterCount = titleWords.replace(/\s+/g, '').length;
@@ -19,18 +20,6 @@ function changeLetterCounter() {
         let textLetterCount = textWords.replace(/\s+/g, '').length;
         textInputWordCounter.textContent = textLetterCount + "/300";
     });
-
-    let embedInput = document.getElementById("embed-button");
-    embedInput.setAttribute("type", "file");
-    embedInput.setAttribute("name", "filename");
-
-    let submitButton = document.getElementById("submit-button");
-    submitButton.addEventListener('click', function() {
-        createNote();
-        titleInputWordCounter.textContent = "0/70"
-        textInputWordCounter.textContent = "0/300";
-        embedInputDelete.click();
-    })
 }
 
 /**
@@ -38,7 +27,9 @@ function changeLetterCounter() {
  */
 function changeInputBehaviour () {
     let inputForm = document.getElementById("input-form");
+    let titleInputWordCounter = document.getElementById("titleWordCounter");
     let textInput = document.getElementById("input-text");
+    let textInputWordCounter = document.getElementById("textWordCounter");
     let submitButton = document.getElementById("submit-button");
     let embedInput = document.getElementById("embed-button");
     let embedInputLabel = document.getElementById("embed-label");
@@ -78,7 +69,15 @@ function changeInputBehaviour () {
             textInput.value.trim();
         }
     });
+
+    // Fix warning to reset text contents of counters.
+    submitButton.addEventListener('click', function() {
+        createNote();
+        titleInputWordCounter.textContent = "0/70"
+        textInputWordCounter.textContent = "0/300";
+        embedInputDelete.click();
+    })
 }
 
-changeLetterCounter();
+activateLetterCounter();
 changeInputBehaviour();
