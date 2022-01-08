@@ -27,6 +27,7 @@ function activateLetterCounter() {
  */
 function changeInputBehaviour () {
     let inputForm = document.getElementById("input-form");
+    let titleInput = document.getElementById("input-title");
     let titleInputWordCounter = document.getElementById("titleWordCounter");
     let textInput = document.getElementById("input-text");
     let textInputWordCounter = document.getElementById("textWordCounter");
@@ -59,6 +60,7 @@ function changeInputBehaviour () {
 
     inputForm.addEventListener('submit', e => {
         e.preventDefault();
+        submitButton.textContent = "Take a Note";
     });
 
     textInput.addEventListener('keydown', function(event) {
@@ -73,10 +75,10 @@ function changeInputBehaviour () {
     // Fix warning to reset text contents of counters.
     submitButton.addEventListener('click', function() {
         createNote();
-        titleInputWordCounter.textContent = "0/70"
-        textInputWordCounter.textContent = "0/300";
         embedInputDelete.click();
-    })
+        titleInputWordCounter.textContent = "0/70";
+        textInputWordCounter.textContent = "0/300";
+    });
 }
 
 activateLetterCounter();

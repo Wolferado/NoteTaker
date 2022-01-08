@@ -12,6 +12,9 @@
             createNoteFromLocalStorage(localNoteTitle, localNoteText, localNoteImage, id);
         });
     }
+    else {
+        localStorage.clear();
+    }
 }
 
 /**

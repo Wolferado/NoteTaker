@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
     <title>NoteTaker - Take a Note</title>
 </head>
 <body>
@@ -15,7 +24,7 @@
             <div id="grid-embed">
                 <label id="embed-label" for="embed-button">Choose a File...</label>
                 <input id="embed-button" type="file" name="filename" placeholder="+">
-                <ins id="delete-embed">Remove File</ins>
+                <p id="delete-embed"><span class="material-icons">delete_outline</span></p>
             </div>
             <div id="grid-input">
                 <h3>Title</h3>
@@ -23,7 +32,7 @@
                 <h3>Text</h3>
                 <textarea id="input-text" type="text" autocomplete="off" maxlength="300" placeholder="Enter your note in here..."></textarea><span id="textWordCounter">0/300</span> <br>
                 <br>
-                <span id="input-warning">Test</span>
+                <span id="input-warning"></span>
                 <button id="submit-button" type="button">Take a Note</button>
             </div>
         </form>
