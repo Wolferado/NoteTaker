@@ -1,4 +1,3 @@
-// Global variables for script to function normally.
 const container = document.getElementById("note-container");
 const LOCAL_STORAGE_NOTES_ID_LIST_KEY = "notes.ids.list";
 let notesIDs = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NOTES_ID_LIST_KEY)) || [];
@@ -68,6 +67,7 @@ function createNote() {
                 el.style.opacity = opacity;
             }
 
+            // Select deleted note from Local Storage and delete it along all linked infomration.
             let noteIndex = notesIDs.indexOf(noteId)
             notesIDs.splice(noteIndex, 1);
             localStorage.setItem(LOCAL_STORAGE_NOTES_ID_LIST_KEY, JSON.stringify(notesIDs));

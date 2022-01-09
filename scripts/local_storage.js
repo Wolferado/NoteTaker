@@ -3,6 +3,7 @@
  * @param list An array, which contains IDs of the notes.
  */
  function displayExistingNotes(list) {
+    // If selected list contains notes, get all needed information from Local Storage and display it as notes.
     if(list.length != 0) {
         list.forEach(id => {
             let localNoteTitle = localStorage.getItem(id + "_title");
@@ -12,6 +13,7 @@
             createNoteFromLocalStorage(localNoteTitle, localNoteText, localNoteImage, id);
         });
     }
+    // Else clear Local Storage from trash that can possibly occur.
     else {
         localStorage.clear();
     }
@@ -73,6 +75,7 @@ function createNoteFromLocalStorage(title, text, image, noteId) {
             el.style.opacity = opacity;
         }
 
+        // Select deleted note from Local Storage and delete it along all linked infomration.
         let noteIndex = notesIDs.indexOf(noteId)
         notesIDs.splice(noteIndex, 1);
         localStorage.setItem(LOCAL_STORAGE_NOTES_ID_LIST_KEY, JSON.stringify(notesIDs));

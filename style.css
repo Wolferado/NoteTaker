@@ -189,7 +189,7 @@ body {
 
 .note > div {
     font-size: 25px;
-    word-break: break-all;
+    word-break:keep-all;
 }
 
 .note > img {
@@ -198,8 +198,8 @@ body {
     border: 3px solid #CA965C;
     box-shadow: #CA965C 0px 0px 5px;
     margin: 10px 10px 0px 10px;
-    width: 70%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
 }
 
 .note .note-button-container {
