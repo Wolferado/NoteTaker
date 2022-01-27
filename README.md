@@ -13,15 +13,18 @@ Features of the site:
 
 Views of the Website:
 
+<div align="center">
+  
 **Desktop**
 
-![https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC).png?raw=true](https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC).png?raw=true)
+<img src="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC).png?raw=true" width="40%" height="40%" alt="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC).png?raw=true">
 
-![https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC)(1).png?raw=true](https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC)(1).png?raw=true)
-
+<img src="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC)(1).png?raw=true" width="40%" height="40%" alt="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(PC)(1).png?raw=true">
 
 **Mobile**
 
-![https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4).png?raw=true](https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4).png?raw=true)
+<img src="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4).png?raw=true" width="40%" height="40%" alt="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4).png?raw=true">
 
-![https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4)%20(1).png?raw=true](https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4)%20(1).png?raw=true)
+<img src="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4)%20(1).png?raw=true" width="40%" height="40%" alt="https://github.com/Wolferado/NoteTaker/blob/main/README%20files/127.0.0.1_5500_index.html(Moto%20G4)%20(1).png?raw=true">
+
+</div>
